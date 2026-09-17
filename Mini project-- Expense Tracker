@@ -1,0 +1,51 @@
+# ========Expense Tracker=======
+print("====Welcome to Expense Tracker======")
+expenses = []  # list 
+while True :
+    print("\n =====MENU====")
+    print("1. ADD EXPENSE")
+    print("2. VIEWS EXPENSES")
+    print("3. TOTAL SPENDING")
+    print("4. Exit here ......")
+    choice = int(input("plse enter choice here"))
+
+# AAD EXPENSE.
+
+    if choice == 1:
+        date = input("Enter date here...")
+        category = input("Enter the category of the object")
+        description = input("Enter the detail explanation of the object whic type of thing you purchase")
+        amount = int(input("Enter a amount here"))       
+    expense = {
+        "date": date,
+        "category": category,
+        "description": description,
+        "amount ": amount
+    }
+    expenses.append(expense)
+    print ("\n expenses add successfully ")
+
+# VIEW EXPENSES
+    if choice == 2:
+        if len(expense)==0:
+            print("NO expenses record here")
+        else:
+            print("All the expenses....")
+            count = 1
+            for eachkharcha in expenses:
+                print(f"kharcha Number {count} = {eachkharcha["date"]} ,{eachkharcha["category"]}, {eachkharcha["description"]} , {eachkharcha["amount"]}")
+                count += 1
+
+# total spending
+    elif choice == 3:   
+        total = 0
+        for eachkharcha in expenses:
+            total = total + eachkharch(amount)
+        print("Total kharcha =",total)
+
+# exit
+    elif choice == 4:
+        print("thank you for using our system")
+        break
+    else:
+        print("Invalid choice")
